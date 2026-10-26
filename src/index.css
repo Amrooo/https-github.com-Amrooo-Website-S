@@ -1,0 +1,386 @@
+@font-face {
+  font-family: 'TheSans';
+  src: url('/fonts/TheSans-Plain.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('/fonts/TheSans-Plain.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('/fonts/TheSans-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('/fonts/TheSans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('/fonts/TheSans-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('/fonts/TheSans-Bold.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "TheSans", "Almarai", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "TheSans", "Almarai", sans-serif;
+  --color-background: #09090b;
+  --color-foreground: #fafafa;
+  --color-accent: #22d3ee; /* Cyan-400 */
+  --breakpoint-xs: 480px;
+}
+
+.bg-texture {
+  background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .bg-texture {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+}
+
+html, body, #root, * {
+  font-family: "TheSans", "Almarai", ui-sans-serif, system-ui, sans-serif !important;
+}
+
+html {
+  /* Natural hardware-accelerated scroll */
+  scroll-behavior: auto;
+}
+
+/* Global Cursor */
+button, a, [role="button"] {
+  cursor: pointer !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(82, 82, 91, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(82, 82, 91, 0.5);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(82, 82, 91, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(82, 82, 91, 0.5);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.2);
+}
+
+.dark .scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: rgba(82, 82, 91, 0.2);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes border-gradient {
+  0% { border-color: rgba(37, 99, 235, 0.2); }
+  50% { border-color: rgba(16, 185, 129, 0.6); }
+  100% { border-color: rgba(37, 99, 235, 0.2); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.service-card-shadow {
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25), 0 15px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+.dark .service-card-shadow {
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.9), 0 20px 40px -15px rgba(0, 0, 0, 1);
+}
+
+.service-card-hover {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 3px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(to right, rgba(59, 130, 246, 0.3), rgba(23, 159, 255, 0.3));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100% 100%, 200% 200%;
+}
+
+.dark .service-card-hover {
+  background-image: linear-gradient(#18181b, #18181b), linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(23, 159, 255, 0.2));
+}
+
+.service-card-hover:hover {
+  box-shadow: 0 35px 70px -20px rgba(37, 99, 235, 0.3);
+  transform: translateY(-12px) scale(1.02);
+  background-image: linear-gradient(white, white), linear-gradient(90deg, #3b82f6, #179fff, #3b82f6);
+  animation: border-shimmer 3s linear infinite;
+}
+
+.dark .service-card-hover:hover {
+  box-shadow: 0 40px 80px -25px rgba(0, 0, 0, 0.95);
+  background-image: linear-gradient(#18181b, #18181b), linear-gradient(90deg, #3b82f6, #179fff, #3b82f6);
+}
+
+@keyframes border-shimmer {
+  0% { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 200% 50%; }
+}
+
+@keyframes icon-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.animate-icon-pulse {
+  animation: icon-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes logo-fade {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.6; filter: brightness(1.8); }
+}
+
+.animate-logo-fade {
+  animation: logo-fade 4s ease-in-out infinite;
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #000000 0%, #4a4a4a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.dark .title-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auction-button-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, #1a73e8, #87bcff) border-box;
+}
+
+.dark .auction-button-border {
+  background: linear-gradient(#18181b, #18181b) padding-box,
+              linear-gradient(to right, #1a73e8, #87bcff) border-box;
+}
+
+.service-card-bg-overlay {
+  background: linear-gradient(135deg, rgba(244, 244, 245, 0.4) 0%, rgba(228, 228, 231, 0.2) 100%);
+}
+
+.dark .service-card-bg-overlay {
+  background: linear-gradient(135deg, rgba(39, 39, 42, 0.4) 0%, rgba(24, 24, 27, 0.2) 100%);
+}
+
+/* Accessibility Classes */
+.accessibility-simple-font, .accessibility-simple-font * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.accessibility-highlight-links a {
+  background-color: #ffeb3b !important;
+  color: #000 !important;
+  text-decoration: underline !important;
+  font-weight: bold !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+}
+
+.accessibility-high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.accessibility-high-contrast * {
+  border-color: #fff !important;
+}
+
+.accessibility-high-contrast button {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+.accessibility-seizure-safe * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.accessibility-adhd-friendly * {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.accessibility-cognitive-friendly {
+  line-height: 1.8 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Animated Black Text Styling */
+@keyframes animatedBlackFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-black-text {
+  color: #09090b;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.dark .animated-black-text {
+  color: #ffffff;
+  font-weight: 900;
+  display: inline-block;
+}
+
+/* Tactical Map Corridor Dash Animation */
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.animate-dash {
+  animation: dashFlow 1.2s linear infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+

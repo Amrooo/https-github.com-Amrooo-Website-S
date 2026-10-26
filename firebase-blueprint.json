@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "idNumber": { "type": "string" },
+        "photo": { "type": "string" }
+      },
+      "required": ["uid", "name", "email"]
+    },
+    "Vehicle": {
+      "title": "Vehicle Details",
+      "description": "Information about a registered vehicle",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "make": { "type": "string" },
+        "model": { "type": "string" },
+        "year": { "type": "string" },
+        "color": { "type": "string" },
+        "plate": { "type": "string" },
+        "insuranceStatus": { "type": "string" },
+        "insuranceProvider": { "type": "string" },
+        "lastService": { "type": "string" },
+        "registrationExpiry": { "type": "string" }
+      },
+      "required": ["ownerId", "make", "model", "plate"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "/vehicles/{vehicleId}": {
+      "schema": "Vehicle",
+      "description": "Registered vehicles"
+    }
+  }
+}

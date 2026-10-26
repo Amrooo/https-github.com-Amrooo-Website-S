@@ -1,0 +1,6 @@
+{
+  "name": "Saaed Smart Portal",
+  "description": "Unified platform for Saaed Traffic Systems, featuring a modern web portal and integrated mobile application (iOS/Android) for smart traffic solutions in the UAE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

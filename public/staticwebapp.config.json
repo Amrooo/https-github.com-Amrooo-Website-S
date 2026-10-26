@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/assets/*",
+      "/images/*",
+      "/fonts/*",
+      "*.{png,jpg,jpeg,gif,svg,webp,ico,css,js,json,woff,woff2,mp3,mp4}"
+    ]
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".woff2": "font/woff2",
+    ".woff": "font/woff",
+    ".webp": "image/webp",
+    ".svg": "image/svg+xml",
+    ".mp3": "audio/mpeg",
+    ".mp4": "video/mp4"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  }
+}
